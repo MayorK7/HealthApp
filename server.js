@@ -19,6 +19,7 @@ import notificationRoute from "./routes/notificationroute.js";
 // import "./cron/reminderCron.js";
 import adminNotificationRoute from "./routes/adminNotificationRoute.js";
 import doseRoute from "./routes/doseroute.js";
+import sendEmail from "./utils/sendEmail.js";
 
 // Load Environment Variables
 dotenv.config();
@@ -74,6 +75,36 @@ app.use("/api/admin/notifications",adminNotificationRoute);
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "login.html"));
+});
+
+
+
+app.get("/test-email", async (req, res) => {
+
+    try {
+
+        await sendEmail({
+
+            to: process.env.EMAIL_USER,
+
+            subject: "Render Email Test",
+
+            html: "<h2>Your email is working from Render!</h2>"
+
+        });
+
+        res.send("Email sent successfully.");
+
+    }
+
+    catch (err) {
+
+        console.error(err);
+
+        res.status(500).send("Email failed.");
+
+    }
+
 });
 // ==============================
 // 404 Route

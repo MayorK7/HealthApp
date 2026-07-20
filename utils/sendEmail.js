@@ -32,33 +32,33 @@ const transporter = nodemailer.createTransport({
 
 
 
-const sendEmail = async ({ to, subject, html }) => {
+// const sendEmail = async ({ to, subject, html }) => {
 
-    try {
+//     try {
 
-        await transporter.sendMail({
+//         await transporter.sendMail({
 
-            from: process.env.EMAIL_USER,
+//             from: process.env.EMAIL_USER,
 
-            to,
+//             to,
 
-            subject,
+//             subject,
 
-            html
+//             html
 
-        });
+//         });
 
-        console.log("Email sent to:", to);
+//         console.log("Email sent to:", to);
 
-    }
+//     }
 
-    catch(err){
+//     catch(err){
 
-        console.error("Email sending failed:", err.message);
+//         console.error("Email sending failed:", err.message);
 
-    }
+//     }
 
-};
+// };
 
 
 
