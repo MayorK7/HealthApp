@@ -23,6 +23,16 @@ const reminderService = async () => {
         console.log("Checking time:", currentTime);
 
 
+        const allMedications = await Medication.find();
+
+         allMedications.forEach(med => {
+         console.log(
+        med.medicationName,
+        med.reminderTimes
+    );
+});
+
+
 
         const medications = await Medication.find({
 
@@ -45,6 +55,9 @@ const reminderService = async () => {
 
 
             if(!patient) continue;
+
+
+            console.log("About to send email to:", patient.email);
 
 
 
@@ -146,6 +159,17 @@ const reminderService = async () => {
         );
 
     }
+
+
+    console.log("Server Date:", new Date().toString());
+console.log("Server ISO:", new Date().toISOString());
+
+const now = new Date();
+
+console.log(
+    "Server Time:",
+    now.getHours() + ":" + now.getMinutes()
+);
 
 };
 

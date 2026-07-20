@@ -62,4 +62,39 @@ const sendEmail = async ({ to, subject, html }) => {
 
 
 
+const sendEmail = async ({ to, subject, html }) => {
+    console.log("Attempting to send email to:", to);
+
+    try {
+        const info = await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to,
+            subject,
+            html
+        });
+
+        console.log("Email sent successfully:", info.messageId);
+
+    } catch (err) {
+        console.error("Full email error:", err);
+    }
+};
+
+
+console.log("sendEmail() called");
+
+try {
+    const info = await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to,
+        subject,
+        html
+    });
+
+    console.log("Email sent successfully:", info.messageId);
+
+} catch (err) {
+    console.error("SMTP Error:", err);
+}
+
 export default sendEmail;
