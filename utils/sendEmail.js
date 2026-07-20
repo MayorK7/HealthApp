@@ -1,68 +1,54 @@
-import nodemailer from "nodemailer";
-
-console.log("EMAIL_HOST =", process.env.EMAIL_HOST);
-console.log("EMAIL_PORT =", process.env.EMAIL_PORT);
-console.log("EMAIL_USER =", process.env.EMAIL_USER);
-
-const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: Number(process.env.EMAIL_PORT),
-    secure: false,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
-});
+import { Resend } from "resend";
 
 
-transporter.verify((error, success)=>{
-
-    if(error){
-
-        console.log("SMTP CONNECTION FAILED:", error);
-
-    }else{
-
-        console.log("SMTP SERVER READY");
-
-    }
-
-});
+// Initialize Resend API
+const resend = new Resend(
+    process.env.RESEND_API_KEY
+);
 
 
-
-
+// Send Email Function
 const sendEmail = async ({ to, subject, html }) => {
 
-    console.log("Attempting to send email to:", to);
+    console.log("Sending email to:", to);
 
     try {
 
-        const info = await transporter.sendMail({
+        const response = await resend.emails.send({
 
-            from: process.env.EMAIL_USER,
+            from: "HealthApp <onboarding@resend.dev>",
 
-            to,
+            to: to,
 
-            subject,
+            subject: subject,
 
-            html
+            html: html
 
         });
 
-        console.log("Email sent successfully:", info.messageId);
 
-        return info;
+        console.log(
+            "Email sent successfully:",
+            response
+        );
 
-    } catch (err) {
 
-        console.error("SMTP FULL ERROR:", err);
+        return response;
 
-        throw err;
+
+    } catch (error) {
+
+        console.error(
+            "Email sending error:",
+            error
+        );
+
+
+        throw error;
+
     }
+
 };
+
 
 export default sendEmail;
