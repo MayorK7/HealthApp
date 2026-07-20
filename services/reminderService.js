@@ -14,13 +14,26 @@ const reminderService = async () => {
         console.log("Checking medication reminders...");
 
 
+        // const now = new Date();
+
+
+        // const currentTime = now.toTimeString().slice(0,5);
+
+
         const now = new Date();
 
+        const nigeriaTime = new Intl.DateTimeFormat("en-GB", {
+         timeZone:"Africa/Lagos",
+         hour:"2-digit",
+         minute:"2-digit",
+         hour12:false
+         }).format(now);
 
-        const currentTime = now.toTimeString().slice(0,5);
+
+         const [hour, minute] = nigeriaTime.split(":");
 
 
-        console.log("Checking time:", currentTime);
+
 
 
         const allMedications = await Medication.find();
@@ -35,14 +48,16 @@ const reminderService = async () => {
 
 
         const medications = await Medication.find({
+          status:{
+             $in:["Pending","Active"]
+    },
+         reminderTimes:{
+             $in:[nigeriaTime]
+    }
+});
 
-            status:{
-                $in:["Pending","Active"]
-            },
-
-            reminderTimes: currentTime
-
-        });
+console.log("Nigeria time:", nigeriaTime);
+console.log("Found reminders:", medications.length);
 
 
 
