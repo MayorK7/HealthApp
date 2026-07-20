@@ -67,10 +67,14 @@ app.use("/api/admin/notifications",adminNotificationRoute);
 // Home Route
 // ==============================
 
-app.get("/", (req, res) => {
-  res.send("🚀 Mobile Health Management System API is Running...");
-});
+// app.get("/", (req, res) => {
+//   res.send("🚀 Mobile Health Management System API is Running...");
+// });
 
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "login.html"));
+});
 // ==============================
 // 404 Route
 // ==============================
