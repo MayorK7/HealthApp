@@ -5,7 +5,7 @@ console.log("EMAIL_PORT =", process.env.EMAIL_PORT);
 console.log("EMAIL_USER =", process.env.EMAIL_USER);
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: "smtp-relay.brevo.com",
     port: 587,
     secure: false,
     auth: {
