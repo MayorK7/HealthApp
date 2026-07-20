@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Dashboard | Mobile Health App</title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Dashboard CSS -->
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- =========================
+        SIDEBAR
+========================== -->
+
+<nav id="sidebar">
+
+    <div class="sidebar-header text-center">
+
+        <img src="Images/download_health-removebg-preview.png"
+             class="logo">
+
+        <h4>
+
+           Group 14 Web Health App
+
+        </h4>
+
+    </div>
+
+    <ul class="list-unstyled components">
+
+        <li class="active">
+
+            <a href="dashboard.html">
+
+                <i class="bi bi-grid-fill"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="profile.html">
+
+                <i class="bi bi-person-circle"></i>
+
+                My Profile
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="medications.html">
+
+                <i class="bi bi-capsule-pill"></i>
+
+                My Medications
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="add-medication.html">
+
+                <i class="bi bi-plus-circle-fill"></i>
+
+                Add Medication
+
+            </a>
+
+        </li>
+
+        <li>
+
+    <a href="explore.html">
+
+        <i class="bi bi-globe"></i>
+
+        Explore
+
+    </a>
+
+</li>
+
+        <!-- <li>
+
+            <a href="reminder.html">
+
+                <i class="bi bi-alarm-fill"></i>
+
+                Medication Reminder
+
+            </a>
+
+        </li> -->
+
+        <!-- <li>
+
+            <a href="reports.html">
+
+                <i class="bi bi-bar-chart-fill"></i>
+
+                Reports
+
+            </a>
+
+        </li> -->
+
+        <!-- <li>
+
+            <a href="settings.html">
+
+                <i class="bi bi-gear-fill"></i>
+
+                Settings
+
+            </a>
+
+        </li> -->
+
+        <li>
+
+            <a href="#" id="logoutBtn">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- =========================
+        PAGE CONTENT
+========================== -->
+
+<div id="content">
+
+<!-- =========================
+        TOP NAVBAR
+========================== -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-4 mb-4">
+
+<div class="container-fluid">
+
+<button class="btn btn-primary"
+        id="menu-toggle">
+
+<i class="bi bi-list"></i>
+
+</button>
+
+<div class="ms-auto d-flex align-items-center">
+
+<!-- Search -->
+
+<!-- <div class="input-group me-4 search-box">
+
+<span class="input-group-text">
+
+<i class="bi bi-search"></i>
+
+</span>
+
+<input type="text"
+       class="form-control"
+       placeholder="Search...">
+
+</div> -->
+
+<!-- Notification -->
+
+<!-- <div class="dropdown me-4">
+
+<button class="btn position-relative">
+
+<i class="bi bi-bell-fill fs-4"></i>
+
+<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+3
+
+</span>
+
+</button>
+
+</div> -->
+
+<div class="dropdown">
+
+<button 
+class="btn position-relative"
+data-bs-toggle="dropdown">
+
+
+<i class="bi bi-bell-fill fs-4"></i>
+
+
+<span 
+id="notificationCount"
+class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+0
+
+</span>
+
+
+</button>
+
+
+
+<ul 
+id="notificationList"
+class="dropdown-menu dropdown-menu-end">
+</ul>
+
+
+</div>
+
+<!-- Profile -->
+
+<div class="dropdown">
+
+<a class="d-flex align-items-center text-decoration-none"
+
+   href="#"
+
+   data-bs-toggle="dropdown">
+
+<img
+
+id="dashboardProfile"
+
+src="../images/default-profile.png"
+
+width="45"
+
+height="45"
+
+class="rounded-circle border">
+
+<div class="ms-3">
+
+<h6 class="mb-0"
+
+id="patientName">
+
+Loading...
+
+</h6>
+
+<small class="text-muted">
+
+Patient
+
+</small>
+
+</div>
+
+</a>
+
+<ul class="dropdown-menu dropdown-menu-end">
+
+<li>
+
+<a class="dropdown-item"
+
+href="profile.html">
+
+<i class="bi bi-person"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+<!-- <li>
+
+<a class="dropdown-item"
+
+href="settings.html">
+
+<i class="bi bi-gear"></i>
+
+Settings
+
+</a>
+
+</li> -->
+
+<li><hr></li>
+
+<li>
+
+<a class="dropdown-item"
+
+href="#"
+
+id="logoutDropdown">
+
+<i class="bi bi-box-arrow-right"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- =========================
+      WELCOME SECTION
+========================== -->
+
+<div class="row mb-4">
+
+<div class="col-lg-8">
+
+<div class="welcome-card">
+
+<h2>
+
+Good Morning,
+
+
+<h2>
+    Welcome,
+    <span id="welcomeName"></span>
+</h2>
+<span id="welcomeName">
+
+
+Loading...
+
+</span>
+
+👋
+
+</h2>
+
+<p>
+
+Welcome back to your personalized medication management dashboard.
+
+Stay healthy by keeping track of your medications and reminders.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="date-card">
+
+<h5>
+
+Today's Date
+
+</h5>
+
+<h3 id="todayDate">
+
+Loading...
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+        DASHBOARD STATISTICS
+========================================== -->
+
+<div class="row g-4 mb-4">
+
+    <!-- Total Medications -->
+    <div class="col-xl-3 col-md-6">
+
+        <div class="card dashboard-card border-0 shadow-sm">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <small class="text-muted">
+
+                            Total Medications
+
+                        </small>
+
+                        <h2 id="totalMeds" class="fw-bold mt-2">
+
+                            0
+
+                        </h2>
+
+                    </div>
+
+                    <div class="card-icon bg-primary">
+
+                        <i class="bi bi-capsule-pill text-white"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Today's Reminders -->
+
+    <div class="col-xl-3 col-md-6">
+
+        <div class="card dashboard-card border-0 shadow-sm">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <small class="text-muted">
+
+                            Today's Reminders
+
+                        </small>
+
+                        <h2 id="todayReminders" class="fw-bold mt-2">
+
+                            0
+
+                        </h2>
+
+                    </div>
+
+                    <div class="card-icon bg-success">
+
+                        <i class="bi bi-alarm-fill text-white"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Completed -->
+
+    <div class="col-xl-3 col-md-6">
+
+        <div class="card dashboard-card border-0 shadow-sm">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <small class="text-muted">
+
+                            Completed Today
+
+                        </small>
+
+                        <h2 id="completedDose" class="fw-bold mt-2">
+
+                            0
+
+                        </h2>
+
+                    </div>
+
+                    <div class="card-icon bg-info">
+
+                        <i class="bi bi-check-circle-fill text-white"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Missed -->
+
+    <div class="col-xl-3 col-md-6">
+
+        <div class="card dashboard-card border-0 shadow-sm">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <small class="text-muted">
+
+                            Missed Doses
+
+                        </small>
+
+                        <h2 id="missedDose" class="fw-bold mt-2 text-danger">
+
+                            0
+
+                        </h2>
+
+                    </div>
+
+                    <div class="card-icon bg-danger">
+
+                        <i class="bi bi-x-circle-fill text-white"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+            QUICK ACTIONS
+========================================== -->
+
+<div class="row mb-4">
+
+    <div class="col-lg-8">
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-header bg-white">
+
+                <h5 class="fw-bold">
+
+                    Quick Actions
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row text-center g-3">
+
+                    <div class="col-md-3">
+
+                        <a href="add-medication.html"
+                           class="btn btn-primary w-100 py-3">
+
+                            <i class="bi bi-plus-circle fs-3"></i>
+
+                            <br>
+
+                            Add Medication
+
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <a href="medications.html"
+                           class="btn btn-success w-100 py-3">
+
+                            <i class="bi bi-capsule fs-3"></i>
+
+                            <br>
+
+                            My Medications
+
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <a href="reminder.html"
+                           class="btn btn-warning w-100 py-3 text-white">
+
+                            <i class="bi bi-alarm fs-3"></i>
+
+                            <br>
+
+                            Reminders
+
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <a href="profile.html"
+                           class="btn btn-info text-white w-100 py-3">
+
+                            <i class="bi bi-person-circle fs-3"></i>
+
+                            <br>
+
+                            My Profile
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Medication Progress -->
+
+    <div class="col-lg-4">
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-header bg-white">
+
+                <h5 class="fw-bold">
+
+                    Medication Adherence
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <h2 id="progressPercent"
+                    class="text-primary">
+
+                    85%
+
+                </h2>
+
+                <div class="progress"
+                     style="height:12px;">
+
+                    <div class="progress-bar bg-primary"
+
+                         id="progressBar"
+
+                         role="progressbar"
+
+                         style="width:85%">
+
+                    </div>
+
+                </div>
+
+                <p class="mt-3 text-muted">
+
+                    Keep taking your medications on time to maintain excellent adherence.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+        TODAY'S MEDICATIONS
+========================================== -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-lg-8">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-header bg-white">
+
+                <div class="d-flex justify-content-between">
+
+                    <h5 class="fw-bold">
+
+                        Today's Medication Schedule
+
+                    </h5>
+
+                    <a href="medications.html"
+                       class="btn btn-sm btn-primary">
+
+                        View All
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="card-body p-0">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead class="table-light">
+
+                        <tr>
+
+                            <th>Medication</th>
+
+                            <th>Dosage</th>
+
+                            <th>Time</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                        </thead>
+
+                        <tbody id="todayMedicationTable">
+
+                        <!-- JavaScript Loads Here -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Upcoming Reminders -->
+
+    <div class="col-lg-4">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-header bg-white">
+
+                <h5 class="fw-bold">
+
+                    Upcoming Reminders
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <div id="reminderList">
+
+                    <!-- JS Loads -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- ==========================================
+        RECENT ACTIVITY
+========================================== -->
+
+<div class="row g-4 mb-4">
+
+<div class="col-lg-6">
+
+<div class="card shadow-sm border-0">
+
+<div class="card-header bg-white">
+
+<h5 class="fw-bold">
+
+Recent Activities
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<ul class="list-group list-group-flush"
+
+id="activityList">
+
+<!-- JS -->
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- ==========================================
+        HEALTH SUMMARY
+========================================== -->
+
+<div class="col-lg-6">
+
+<div class="card shadow-sm border-0">
+
+<div class="card-header bg-white">
+
+<h5 class="fw-bold">
+
+Health Summary
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<div class="mb-4">
+
+<label class="fw-semibold">
+
+Medication Adherence
+
+</label>
+
+<div class="progress mt-2">
+
+<div
+
+id="adherenceBar"
+
+class="progress-bar bg-success"
+
+style="width:80%">
+
+80%
+
+</div>
+
+</div>
+
+</div>
+
+<div class="mb-4">
+
+<label class="fw-semibold">
+
+Water Intake
+
+</label>
+
+<div class="progress mt-2">
+
+<div
+
+class="progress-bar bg-info"
+
+style="width:65%">
+
+65%
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<label class="fw-semibold">
+
+Appointments Completed
+
+</label>
+
+<div class="progress mt-2">
+
+<div
+
+class="progress-bar bg-warning"
+
+style="width:90%">
+
+90%
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- ==========================================
+        MEDICATION ANALYTICS
+========================================== -->
+
+<div class="row mb-4">
+
+<div class="col-lg-8">
+
+<div class="card border-0 shadow-sm">
+
+<div class="card-header bg-white">
+
+<h5 class="fw-bold">
+
+Medication Analytics
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<canvas id="medChart"
+
+height="120">
+
+</canvas>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-warning text-dark">
+        <h5><i class="bi bi-alarm"></i> Today's Reminder</h5>
+    </div>
+
+    <div class="card-body" id="todayReminder">
+        Loading...
+    </div>
+</div>
+
+
+
+
+
+<div class="col-lg-4">
+
+<div class="card border-0 shadow-sm">
+
+<div class="card-header bg-white">
+
+<h5 class="fw-bold">
+
+Health Tips
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<div class="alert alert-success">
+
+💊 Never skip your medications.
+
+</div>
+
+<div class="alert alert-primary">
+
+🥗 Eat healthy foods.
+
+</div>
+
+<div class="alert alert-warning">
+
+🚶 Walk at least 30 minutes daily.
+
+</div>
+
+<div class="alert alert-info">
+
+💧 Drink plenty of water.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="dashboard.js"></script>
+<script src="reminder.js"></script>
+<script src="notification.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

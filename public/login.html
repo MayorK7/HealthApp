@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile health app</title>
+
+     <!-- Bootstrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- Bootstrap Icons -->
+     <link rel="stylesheet"
+           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+ 
+     <!-- Google Font -->
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+     <!-- SweetAlert2 -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+     <style>
+
+        *{
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            background:#eef4ff;
+            min-height:100vh;
+        }
+
+        .left-side{
+            background:linear-gradient(135deg,#0d6efd,#4e9dff);
+            color:white;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            padding:60px;
+            min-height:100vh;
+        }
+
+        .left-side img{
+            width:75%;
+            max-width:350px;
+            margin-bottom:30px;
+        }
+
+        .left-side h1{
+            font-weight:700;
+        }
+
+        .left-side p{
+            opacity:.95;
+            font-size:16px;
+        }
+
+        .right-side{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            padding:40px;
+        }
+
+        .login-card{
+
+            width:100%;
+            max-width:480px;
+            border:none;
+            border-radius:20px;
+            box-shadow:0 15px 35px rgba(0,0,0,.08);
+            padding:40px;
+        }
+
+        .form-control{
+
+            height:55px;
+            border-radius:12px;
+
+        }
+
+        .btn-login{
+
+            height:55px;
+            border-radius:12px;
+            font-weight:600;
+
+        }
+
+        .logo{
+
+            font-size:35px;
+            color:#0d6efd;
+
+        }
+
+        .password-icon{
+
+            cursor:pointer;
+
+        }
+
+        .loading{
+
+            display:none;
+
+        }
+
+        @media(max-width:991px){
+
+            .left-side{
+                display:none;
+            }
+
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <body>
+
+        <div class="container-fluid">
+        
+        <div class="row">
+        
+        <!-- LEFT -->
+        
+        <div class="col-lg-6 left-side">
+        
+            <img src="Images/download health image.jfif" class="img-fluid">
+        
+            <h1 class = "mb-3">
+        
+                Mobile Health App
+        
+            </h1>
+        
+            <p class="text-center">
+        
+                Personalized Medication Management System
+        
+                <br><br>
+        
+                Stay healthy, never miss your medications, receive reminders and manage your prescriptions securely from anywhere.
+        
+            </p>
+        
+        </div>
+        
+        <!-- RIGHT -->
+        
+        <div class="col-lg-6 right-side">
+        
+        <div class="card login-card">
+        
+        <div class="text-center mb-4">
+        
+        <i class="bi bi-heart-pulse-fill logo"></i>
+        
+        <h2 class="fw-bold mt-3">
+        
+        Welcome Back
+        
+        </h2>
+        
+        <p class="text-muted">
+        
+        Login to continue
+        
+        </p>
+        
+        </div>
+        
+        <form id="loginForm">
+        
+        <!-- EMAIL -->
+        
+        <div class="mb-3">
+        
+        <label class="form-label">
+        
+        Email Address
+        
+        </label>
+        
+        <div class="input-group">
+        
+        <span class="input-group-text">
+        
+        <i class="bi bi-envelope"></i>
+        
+        </span>
+        
+        <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="email"
+        placeholder="Enter your email"
+        required>
+        
+        </div>
+        
+        </div>
+        
+        <!-- PASSWORD -->
+        
+        <div class="mb-3">
+        
+        <label class="form-label">
+        
+        Password
+        
+        </label>
+        
+        <div class="input-group">
+        
+        <span class="input-group-text">
+        
+        <i class="bi bi-lock"></i>
+        
+        </span>
+        
+        <input
+        type="password"
+        class="form-control"
+        name="password"
+        id="password"
+        placeholder="Enter password"
+        required>
+        
+        <span class="input-group-text password-icon">
+        
+        <i
+        class="bi bi-eye"
+        id="togglePassword">
+        
+        </i>
+        
+        </span>
+        
+        </div>
+        
+        </div>
+        
+        <!-- REMEMBER -->
+        
+        <div class="d-flex justify-content-between mb-3">
+        
+        <div class="form-check">
+        
+        <input
+        class="form-check-input"
+        type="checkbox"
+        id="remember">
+        
+        <label
+        class="form-check-label"
+        for="remember">
+        
+        Remember Me
+        
+        </label>
+        
+        </div>
+        
+        <a
+        href="#"
+        class="text-decoration-none">
+        
+        Forgot Password?
+        
+        </a>
+        
+        </div>
+        
+        <!-- LOGIN BUTTON -->
+        
+        <button
+        class="btn btn-primary w-100 btn-login"
+        type="submit">
+        
+        <span class="login-text">
+        
+        Login
+        
+        </span>
+        
+        <span class="spinner-border spinner-border-sm loading">
+        
+        </span>
+        
+        </button>
+        
+        </form>
+        
+        <hr>
+        
+        <div class="text-center">
+        
+        Don't have an account?
+        
+        <a
+        href="register.html"
+        class="text-decoration-none fw-bold">
+        
+        Create Account
+        
+        </a>
+        
+        </div>
+        
+        </div>
+        
+        </div>
+        
+        </div>
+        
+        </div>
+        
+        <!-- Bootstrap -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Login Script -->
+        
+        <script src="login.js"></script>
+</body>
+</html>

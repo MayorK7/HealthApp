@@ -1,0 +1,512 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f4f7fc;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* ===========================
+        SIDEBAR
+=========================== */
+
+.wrapper{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+
+
+#sidebar{
+
+    width:260px;
+
+    background:linear-gradient(180deg,#0d6efd,#084298);
+
+    color:white;
+
+    transition:.4s;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    z-index:999;
+
+    overflow-y:auto;
+
+}
+
+
+
+.sidebar-header{
+
+    padding:30px 20px;
+
+}
+
+
+
+.logo{
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    margin-bottom:15px;
+
+    background:white;
+
+}
+
+
+
+.sidebar-header h4{
+
+    font-weight:700;
+
+}
+
+
+
+#sidebar ul{
+
+    padding-left:0;
+
+}
+
+
+
+#sidebar ul li{
+
+    list-style:none;
+
+}
+
+
+
+#sidebar ul li a{
+
+    display:block;
+
+    padding:15px 25px;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+
+
+#sidebar ul li a i{
+
+    margin-right:12px;
+
+}
+
+
+
+#sidebar ul li:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+
+
+#sidebar ul li.active{
+
+    background:white;
+
+}
+
+
+
+#sidebar ul li.active a{
+
+    color:#0d6efd;
+
+    font-weight:600;
+
+}
+
+
+
+/* ===========================
+        CONTENT
+=========================== */
+
+#content{
+
+    margin-left:260px;
+
+    width:100%;
+
+    padding:30px;
+
+}
+
+
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+.navbar{
+
+    border-radius:18px;
+
+}
+
+
+
+.search-box{
+
+    width:280px;
+
+}
+
+
+
+.search-box input{
+
+    border-left:none;
+
+}
+
+
+
+.search-box span{
+
+    background:white;
+
+}
+
+
+
+/* ===========================
+      WELCOME CARD
+=========================== */
+
+.welcome-card{
+
+    background:linear-gradient(135deg,#0d6efd,#4f8dff);
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+}
+
+
+
+.welcome-card h2{
+
+    font-weight:700;
+
+}
+
+
+
+.date-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+
+
+/* ===========================
+        DASHBOARD CARDS
+=========================== */
+
+.dashboard-card{
+
+    border-radius:18px;
+
+    transition:.35s;
+
+}
+
+
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.card-icon{
+
+    width:65px;
+
+    height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:18px;
+
+}
+
+
+
+.card-icon i{
+
+    font-size:28px;
+
+}
+
+
+
+/* ===========================
+      QUICK BUTTONS
+=========================== */
+
+.btn{
+
+    border-radius:12px;
+
+}
+
+
+
+/* ===========================
+        TABLE
+=========================== */
+
+.table th{
+
+    font-weight:600;
+
+}
+
+
+
+.table td{
+
+    vertical-align:middle;
+
+}
+
+
+
+/* ===========================
+      REMINDERS
+=========================== */
+
+.reminder-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px;
+
+    margin-bottom:15px;
+
+    border-radius:12px;
+
+    background:#f8f9fa;
+
+}
+
+
+
+/* ===========================
+        ACTIVITY
+=========================== */
+
+.list-group-item{
+
+    border:none;
+
+    padding:15px 0;
+
+}
+
+
+
+/* ===========================
+      PROGRESS BAR
+=========================== */
+
+.progress{
+
+    height:12px;
+
+    border-radius:15px;
+
+}
+
+
+
+.progress-bar{
+
+    border-radius:15px;
+
+}
+
+
+
+/* ===========================
+      HEALTH TIPS
+=========================== */
+
+.alert{
+
+    border:none;
+
+    border-radius:15px;
+
+}
+
+
+
+/* ===========================
+      CARDS
+=========================== */
+
+.card{
+
+    border-radius:20px;
+
+}
+
+
+
+/* ===========================
+        PROFILE IMAGE
+=========================== */
+
+.rounded-circle{
+
+    object-fit:cover;
+
+}
+
+
+
+/* ===========================
+      SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#0d6efd;
+
+    border-radius:20px;
+
+}
+
+
+
+/* ===========================
+      MOBILE
+=========================== */
+
+@media(max-width:991px){
+
+#sidebar{
+
+    margin-left:-260px;
+
+}
+
+#sidebar.active{
+
+    margin-left:0;
+
+}
+
+#content{
+
+    margin-left:0;
+
+    padding:20px;
+
+}
+
+.search-box{
+
+    display:none;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.dashboard-card{
+
+    margin-bottom:15px;
+
+}
+
+.welcome-card{
+
+    text-align:center;
+
+}
+
+.date-card{
+
+    margin-top:20px;
+
+}
+
+}

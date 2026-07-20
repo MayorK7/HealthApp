@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Announcements | HealthApp</title>
+
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+
+<style>
+
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:#f5f7fb;
+
+}
+
+
+
+.page-card{
+
+border:none;
+
+border-radius:20px;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+}
+
+
+
+.header-box{
+
+background:linear-gradient(135deg,#0d6efd,#00b4d8);
+
+color:white;
+
+border-radius:20px;
+
+padding:25px;
+
+}
+
+
+
+textarea{
+
+resize:none;
+
+}
+
+
+
+.btn-send{
+
+border-radius:30px;
+
+padding:12px 30px;
+
+}
+
+
+
+.announcement-card{
+
+border-left:5px solid #0d6efd;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container py-5">
+
+
+
+<!-- Header -->
+
+<div class="header-box mb-4">
+
+
+<h2>
+
+<i class="bi bi-megaphone-fill"></i>
+
+Patient Announcements
+
+</h2>
+
+
+<p class="mb-0">
+
+Send important health updates and messages to all patients.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="row g-4">
+
+
+
+<!-- Create Announcement -->
+
+<div class="col-lg-7">
+
+
+<div class="card page-card p-4">
+
+
+<h4 class="mb-4">
+
+<i class="bi bi-pencil-square text-primary"></i>
+
+Create Announcement
+
+</h4>
+
+
+
+<form id="announcementForm">
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Announcement Title
+
+</label>
+
+
+<input
+
+type="text"
+
+id="title"
+
+class="form-control"
+
+placeholder="Example: Clinic Maintenance Notice"
+
+required>
+
+
+</div>
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Message
+
+</label>
+
+
+<textarea
+
+id="message"
+
+rows="6"
+
+class="form-control"
+
+placeholder="Write announcement message..."
+
+required></textarea>
+
+
+</div>
+
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Category
+
+</label>
+
+
+<select id="category" class="form-select">
+
+
+<option value="Admin">
+
+General Announcement
+
+</option>
+
+
+<option value="Medication">
+
+Medication Update
+
+</option>
+
+
+<option value="System">
+
+System Update
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<button
+
+type="submit"
+
+class="btn btn-primary btn-send">
+
+
+<i class="bi bi-send-fill"></i>
+
+Send Announcement
+
+
+</button>
+
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Recent Announcements -->
+
+<div class="col-lg-5">
+
+
+<div class="card page-card p-4">
+
+
+<h4 class="mb-4">
+
+
+<i class="bi bi-clock-history text-primary"></i>
+
+Recent Announcements
+
+
+</h4>
+
+
+
+<div id="announcementList">
+
+
+
+<div class="text-center text-muted">
+
+No announcements yet
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+<script src="announcement.js"></script>
+
+
+</body>
+
+</html>
