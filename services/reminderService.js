@@ -4,7 +4,7 @@
 
 import Medication from "../models/medicationmodels.js";
 import User from "../models/usermodel.js";
-import sendEmail from "../utils/sendemail.js";
+import sendEmail from "../utils/sendEmail.js";
 
 
 const reminderService = async () => {
